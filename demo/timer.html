@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>正向计时器</title>
+  <style>
+    .count-bar {
+      width: 300px;
+      height: 100px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      background-color: #0088a8;
+    }
+
+    .bar {
+      width: 100%;
+      height: 20px;
+      position: relative;
+      background: linear-gradient(rgb(0, 100, 136), rgba(0, 168, 136, 0.8));
+    }
+
+    .color-bar {
+      display: inline-block;
+      width: 1%;
+      height: 20px;
+      position: absolute;
+      background: #00a888;
+    }
+
+    .bar-count {
+      margin: 10px;
+      text-align: center;
+      color: #ffffff;
+      font-size: 2em;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 需求：取得数值页面需要从0叠加至当前数值 -->
+  <div class="count-bar">
+    <div class="bar"><span class="color-bar" id="colorBar"></span></div>
+    <div class="bar-count" id="countNum">0</div>
+  </div>
+  <script>
+    window.onload = function() {
+      var domText = document.getElementById('countNum');
+      var colorBar = document.getElementById('colorBar');
+      var count = 0;
+      var dataVal = 79.6;
+
+      function setVal() {
+        setInterval(() => {
+          if (count < parseFloat(dataVal)) {
+            count++;
+          } else {
+            count = dataVal;
+          }
+          domText.innerText = count + '%';
+          colorBar.style.width = count + '%'
+        }, 30)
+      }
+      setVal()
+      setTimeout(function() {
+        window.location.reload()
+        // domText.innerText = 0;
+        // colorBar.style.width =  '0%'
+      }, 1000 * 5)
+    }
+  </script>
+</body>
+
+</html>
