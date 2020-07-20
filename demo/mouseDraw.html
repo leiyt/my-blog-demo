@@ -51,10 +51,10 @@
     drawArear.onmousedown = function($event) {
       drawReact.style.width = '10px'; // 宽
       drawReact.style.height = '10px'; // 高
-      drawFlag = true;
       if (!drawFlag) {
         return;
       }
+      drawFlag = true;
       drawReact.style.visibility = 'visible'; // 进入画布按下鼠标显示默认矩形框
       // 鼠标按下的位置作为矩形框的顶点
       beginPoint = { x: $event.clientX - areaInfo.x, y: $event.clientY - areaInfo.y }
