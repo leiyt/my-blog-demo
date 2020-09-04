@@ -46,14 +46,14 @@
     var drawFlag; // 定义矩形框绘制标识
     var beginPoint = {}; // 标记起点
     var endPoint = {}; // 标记终点
-
+    
     // 绑定鼠标事件--onmousedown 
     drawArear.onmousedown = function($event) {
       drawReact.style.width = '10px'; // 宽
       drawReact.style.height = '10px'; // 高
-      if (!drawFlag) {
-        return;
-      }
+      // if (!drawFlag) {
+      //   return;
+      // }
       drawFlag = true;
       drawReact.style.visibility = 'visible'; // 进入画布按下鼠标显示默认矩形框
       // 鼠标按下的位置作为矩形框的顶点
